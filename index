@@ -1,1 +1,194 @@
+<!-- Informe Ejecutivo — UrbanStyle S.A.S.
+     Código listo para pegar en Genially (HTML+CSS sin JavaScript).
+     Usa las pestañas (sin JS) para mostrar: Hallazgos, Recomendaciones, Conclusión.
+-->
+<div style="font-family: Inter, Arial, Helvetica, sans-serif; max-width:900px; margin:20px auto; color:#06202a;">
+  <style>
+    /* Container */
+    .ie-card { background:linear-gradient(180deg,#fbfeff,#f1fbfc); border-radius:12px; padding:18px; box-shadow:0 6px 24px rgba(3,15,20,0.08); border:1px solid rgba(6,32,42,0.05); }
+
+    /* Tabs with radio buttons (CSS-only) */
+    .tabs { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+    .tabs label {
+      padding:8px 14px; border-radius:999px; cursor:pointer; background:#e6f7f8; color:#06323a; font-weight:600; border:1px solid rgba(6,50,58,0.06);
+      transition:all .18s ease;
+    }
+    .tabs input { display:none; }
+    .panel { display:none; padding:12px 6px 6px 6px; border-radius:8px; background:transparent; }
+
+    /* Show panel when radio checked */
+    #tab1:checked ~ .content #panel1,
+    #tab2:checked ~ .content #panel2,
+    #tab3:checked ~ .content #panel3 { display:block; }
+
+    /* Active label style */
+    #tab1:checked + label[for="tab1"],
+    #tab2:checked + label[for="tab2"],
+    #tab3:checked + label[for="tab3"] {
+      background:linear-gradient(90deg,#06b6d4,#7c3aed); color:#021022; transform:translateY(-2px); box-shadow:0 8px 26px rgba(12,54,66,0.12);
+    }
+
+    /* Info boxes & icons */
+    .row { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+    .info { flex:1 1 260px; background:#ffffff; border-radius:10px; padding:12px; border:1px solid rgba(6,50,58,0.04); box-shadow:0 4px 12px rgba(6,32,42,0.04); }
+    .big { font-size:20px; font-weight:700; color:#05343d; }
+    .muted { color:#356b72; font-size:13px; margin-top:6px; }
+    .pct { font-size:28px; font-weight:800; color:#7c3aed; }
+    .cta { margin-top:14px; display:inline-block; padding:8px 12px; border-radius:8px; background:#06b6d4; color:#021022; font-weight:700; text-decoration:none; }
+
+    /* Importance-Performance mini chart (static) */
+    .ipa { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px; }
+    .ipa .cell { height:80px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; color:#02303a; }
+    .cell.keep { background:#e6fbf7; border:1px solid #bff0e6; }
+    .cell.improve { background:#fff0f0; border:1px solid #ffd6d6; color:#7a2b2b; }
+    .cell.over { background:#eef6ff; border:1px solid #d0e8ff; }
+    .cell.low { background:#fffaf0; border:1px solid #ffe9c7; }
+
+    /* Small bullets list */
+    .bullets { margin:8px 0 0 0; padding-left:18px; color:#0b4950; }
+    .bullets li { margin:6px 0; }
+
+    /* Responsive */
+    @media (max-width:640px){ .row{flex-direction:column} .info{flex:1 1 auto} }
+  </style>
+
+  <div class="ie-card" role="region" aria-label="Informe Ejecutivo UrbanStyle">
+    <h2 style="margin:0 0 6px 0; color:#04323a;">Informe Ejecutivo — Investigación: Recompra y Fidelización</h2>
+    <p style="margin:0 0 12px 0; color:#1b565b;">Propósito: identificar los determinantes de la intención de recompra para priorizar acciones que aumenten la lealtad y la rentabilidad.</p>
+
+    <!-- Tabs (CSS-only) -->
+    <div class="tabs" role="tablist" aria-label="Secciones del informe">
+      <input type="radio" name="tabs" id="tab1" checked>
+      <label for="tab1">📈 Hallazgos clave</label>
+
+      <input type="radio" name="tabs" id="tab2">
+      <label for="tab2">🛠️ Recomendaciones</label>
+
+      <input type="radio" name="tabs" id="tab3">
+      <label for="tab3">🔚 Conclusión y acciones</label>
+    </div>
+
+    <div class="content">
+      <!-- PANEL 1 -->
+      <section id="panel1" class="panel" role="tabpanel" aria-labelledby="tab1">
+        <div class="row">
+          <div class="info" aria-hidden="false">
+            <div class="big">Logística & Notificaciones</div>
+            <div class="pct">≈ 45%</div>
+            <div class="muted">Explican ~45% de la variación en la intención de recompra (modelo de regresión).</div>
+            <ul class="bullets">
+              <li>Clientes valoran trazabilidad y tiempos cumplidos.</li>
+              <li>Fallas en comunicación generan incertidumbre y pérdidas de confianza.</li>
+            </ul>
+          </div>
+
+          <div class="info">
+            <div class="big">Calidad percibida</div>
+            <div class="pct">~30% impacto</div>
+            <div class="muted">Desajustes entre lo mostrado y lo entregado afectan la satisfacción general.</div>
+            <ul class="bullets">
+              <li>Fotos/descr. poco representativas → devoluciones y quejas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:12px;">
+          <div class="info">
+            <div class="big">Atención posventa</div>
+            <div class="pct">+8 pts NPS</div>
+            <div class="muted">Mejorar devoluciones y resolución puede subir el NPS en ≈8 puntos (estimado).</div>
+          </div>
+
+          <div class="info">
+            <div class="big">Precio vs experiencia</div>
+            <div class="pct">Menor impacto</div>
+            <div class="muted">El precio influye, pero la experiencia completa pesa más en la recompra.</div>
+          </div>
+        </div>
+
+        <!-- Mini IPA (static) -->
+        <div style="margin-top:14px;">
+          <strong>Mapa Importancia–Desempeño (resumen)</strong>
+          <div class="ipa" aria-hidden="true">
+            <div class="cell keep">Mantener: Calidad visual</div>
+            <div class="cell improve">Prioridad: Comunicación logística</div>
+            <div class="cell over">Sobreinversión: Promociones puntuales</div>
+            <div class="cell low">Baja prioridad: Ampliar catálogo (temporal)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 2 -->
+      <section id="panel2" class="panel" role="tabpanel" aria-labelledby="tab2">
+        <div class="row">
+          <div class="info">
+            <div class="big">1. Optimizar logística & notificaciones</div>
+            <div class="muted">Implementar tracking por WhatsApp/Email y SLA claros en ciudades principales.</div>
+            <a class="cta" href="#" onclick="return false;">Ejecutar: 0–3 meses</a>
+          </div>
+
+          <div class="info">
+            <div class="big">2. Control de calidad</div>
+            <div class="muted">Fichas reales con fotos 360°, checklist de entrada de proveedores y muestreo aleatorio.</div>
+            <a class="cta" href="#" onclick="return false;">Ejecutar: 1–4 meses</a>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:12px;">
+          <div class="info">
+            <div class="big">3. Política de devoluciones simplificada</div>
+            <div class="muted">Devolución gratuita en primera compra o cupón de cambio rápido para reducir fricción.</div>
+            <a class="cta" href="#" onclick="return false;">Ejecutar: 0–2 meses</a>
+          </div>
+
+          <div class="info">
+            <div class="big">4. Programa de fidelización</div>
+            <div class="muted">Beneficios por recompra: puntos, acceso temprano y descuentos progresivos.</div>
+            <a class="cta" href="#" onclick="return false;">Ejecutar: 2–6 meses</a>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <strong>Impactos esperados (estimaciones)</strong>
+          <ul class="bullets">
+            <li>Reducción CAC por mayor retención.</li>
+            <li>Aumento CLV por recompra recurrente + programas de fidelidad.</li>
+            <li>NPS +8 pts con mejoras posventa y comunicación.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PANEL 3 -->
+      <section id="panel3" class="panel" role="tabpanel" aria-labelledby="tab3">
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <div class="info" style="flex:1 1 420px;">
+            <div class="big">Conclusión — Acciones estratégicas</div>
+            <div class="muted">Priorizar experiencia y confianza sobre volumen de adquisición.</div>
+            <ol style="margin:8px 0 0 18px; color:#0b4950;">
+              <li><strong>Corregir la comunicación logística</strong> (tracking + SLA).</li>
+              <li><strong>Elevar consistencia de calidad</strong> (control proveedores y fichas reales).</li>
+              <li><strong>Simplificar devoluciones</strong> y mejorar resolución posventa.</li>
+              <li><strong>Diseñar programa de fidelidad</strong> que aumente frecuencia de compra.</li>
+            </ol>
+          </div>
+
+          <div class="info" style="flex:1 1 240px;">
+            <div class="big">KPIs a medir</div>
+            <div class="muted">Indicadores para seguimiento mensual:</div>
+            <ul class="bullets">
+              <li>Tasa de recompra (%)</li>
+              <li>CLV promedio</li>
+              <li>CAC</li>
+              <li>NPS</li>
+              <li>Tiempo promedio de entrega</li>
+            </ul>
+            <a class="cta" href="#" onclick="return false;" style="display:inline-block; margin-top:10px;">Plan de seguimiento</a>
+          </div>
+        </div>
+
+        <p style="margin-top:12px; color:#044a51;"><strong>Mensaje final:</strong> pasar de una estrategia centrada exclusivamente en adquisición a una que combine adquisición inteligente con experiencias que fomenten la recompra es la palanca más eficiente para la sostenibilidad y rentabilidad de UrbanStyle.</p>
+      </section>
+    </div>
+  </div>
+</div>
 
